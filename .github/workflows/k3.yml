@@ -16,10 +16,10 @@ on:
       - dev-19.07
     paths:
       - '.config'
-  #schedule:
-  #    - cron: 0 22 * * *
-  watch:
-    types: [started]
+  # schedule:                  # 定时编译
+  #    - cron: 0 22 * * *      # 定时编译 
+  #   watch:                   # 点star编译
+  #     types: [started]       # 点star编译
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
