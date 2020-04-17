@@ -16,8 +16,8 @@ on:
       - dev-19.07
     paths:
       - '.config'
-  #schedule:
-  #    - cron: 0 22 * * *
+  schedule:
+    - cron: 0 19 * * 4  # 每天国际时间19点，北京时间凌晨3点执行(北京+8)，北京时间周五凌晨3点执行
   watch:
     types: [started]
 
@@ -27,9 +27,9 @@ env:
   CONFIG_FILE: newifi3.config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
-  SSH_ACTIONS: false    # 是否SSH 连接到 Actions
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
+  SSH_ACTIONS: false     # 是否SSH 连接到 Actions
+  UPLOAD_BIN_DIR: true   # 上传 bin 目录。即包含所有 ipk 文件和固件的目录
+  UPLOAD_FIRMWARE: true  # 上传固件的目录
   TZ: Asia/Shanghai
 
 jobs:
